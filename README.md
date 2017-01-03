@@ -1,2 +1,2 @@
-# recs-api
-recommendations api 
+# Sports Betting Web Server
+sports betting akka http
