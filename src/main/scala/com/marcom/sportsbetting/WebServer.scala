@@ -7,12 +7,15 @@ import akka.http.scaladsl.model.{ContentTypes, HttpEntity}
 import akka.http.scaladsl.server.Directives._
 import akka.stream.ActorMaterializer
 import akka.http.scaladsl.marshallers.sprayjson.SprayJsonSupport._
+import akka.kafka.ProducerSettings
 import com.marcom.sportsbetting.services.SportingFixtureService
 import com.marcom.sportsbetting.services.SportingFixtureService.UpdateFixture
 import spray.json.DefaultJsonProtocol._
 import akka.pattern.ask
 import akka.util.Timeout
 import com.marcom.sports.model.{FixtureId, SportsFixture}
+import org.apache.kafka.common.serialization.{ByteArraySerializer, StringSerializer}
+
 import scala.concurrent.duration._
 import scala.io.StdIn
 
